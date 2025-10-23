@@ -1,28 +1,24 @@
-
 let img;
+let pixelSize = 10;
 
 function preload() {
-  img = loadImage('https://github.com/mbmotorcyclesproject/JS-Visualizer/blob/main/harley_davidson_PNG50.png'); // Replace 'your_image.png' with your file name
+  // Use the RAW link, not the GitHub HTML link
+  img = loadImage('https://raw.githubusercontent.com/mbmotorcyclesproject/JS-Visualizer/main/harley_davidson_PNG50.png');
 }
 
 function setup() {
   createCanvas(img.width, img.height);
-  // In this example, we'll draw rectangles of size 10x10
-  let pixelSize = 10;
+  noLoop(); // Stop continuous drawing
 }
+
 function draw() {
-  background(220); // Optional: set a background color
-  let pixelSize = 10; // Size of the squares in the new pixel art
+  background(220);
 
   for (let i = 0; i < img.width; i += pixelSize) {
     for (let j = 0; j < img.height; j += pixelSize) {
-      // Get the color of the pixel at the center of the new square
       let pixelColor = img.get(i, j);
-      
-      // Set the fill color to the sampled pixel color
       fill(pixelColor);
-      
-      // Draw a rectangle (the new "pixel")
+      noStroke();
       rect(i, j, pixelSize, pixelSize);
     }
   }
