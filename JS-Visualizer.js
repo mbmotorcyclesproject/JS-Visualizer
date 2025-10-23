@@ -2,7 +2,7 @@
 let img;
 
 function preload() {
-  img = loadImage('harley_davidson_PNG50.png'); // Replace 'your_image.png' with your file name
+  img = loadImage('https://github.com/mbmotorcyclesproject/JS-Visualizer/blob/main/harley_davidson_PNG50.png'); // Replace 'your_image.png' with your file name
 }
 
 function setup() {
